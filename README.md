@@ -5,6 +5,8 @@ Inspired by: https://devblogs.microsoft.com/pfxteam/getting-random-numbers-in-a-
 
 *Not tested yet*
 
+The static class Rnd manages the System.Random object for you. No initialization is needed
+
 ***Get a Random number***
 ```csharp
 n1 = Rnd.Next.Double();  // n1: double 
