@@ -54,8 +54,8 @@ n6 = Rnd.GreaterThan(n6Min);  // n6, n6Min: long (Int64)
 
 ***Get a Random Item from IEnumerable, params or Enum***
 ```csharp
-item1 = Rnd.From(myEnumerable);
-item2 = Rnd.From(1, 2, 3, 4, 5, 6, 7, 8);
-item3 = Rnd.From("Hello", "world");
-item4 = Rnd.From<MyEnum>();
+item1 = Rnd.From(myEnumerable);           // item1: a random item from "myEnumerable"
+item2 = Rnd.From(1, 2, 3, 4, 5, 6, 7, 8); // item2: a random item from params
+item3 = Rnd.From("Hello", "world");       // item3: a random item from params
+item4 = Rnd.From<MyEnum>();               // item4: a random value from "MyEnum"
 ```
