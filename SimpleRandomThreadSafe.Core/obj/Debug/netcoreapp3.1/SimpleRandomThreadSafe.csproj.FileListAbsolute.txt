@@ -1,0 +1,8 @@
+C:\Dev\iluvadev\projects\SimpleThreadSafeRandom\SimpleRandomThreadSafe.Core\bin\Debug\netcoreapp3.1\SimpleRandomThreadSafe.deps.json
+C:\Dev\iluvadev\projects\SimpleThreadSafeRandom\SimpleRandomThreadSafe.Core\bin\Debug\netcoreapp3.1\SimpleRandomThreadSafe.dll
+C:\Dev\iluvadev\projects\SimpleThreadSafeRandom\SimpleRandomThreadSafe.Core\bin\Debug\netcoreapp3.1\SimpleRandomThreadSafe.pdb
+C:\Dev\iluvadev\projects\SimpleThreadSafeRandom\SimpleRandomThreadSafe.Core\obj\Debug\netcoreapp3.1\SimpleRandomThreadSafe.AssemblyInfoInputs.cache
+C:\Dev\iluvadev\projects\SimpleThreadSafeRandom\SimpleRandomThreadSafe.Core\obj\Debug\netcoreapp3.1\SimpleRandomThreadSafe.AssemblyInfo.cs
+C:\Dev\iluvadev\projects\SimpleThreadSafeRandom\SimpleRandomThreadSafe.Core\obj\Debug\netcoreapp3.1\SimpleRandomThreadSafe.csproj.CoreCompileInputs.cache
+C:\Dev\iluvadev\projects\SimpleThreadSafeRandom\SimpleRandomThreadSafe.Core\obj\Debug\netcoreapp3.1\SimpleRandomThreadSafe.dll
+C:\Dev\iluvadev\projects\SimpleThreadSafeRandom\SimpleRandomThreadSafe.Core\obj\Debug\netcoreapp3.1\SimpleRandomThreadSafe.pdb
