@@ -4,3 +4,7 @@
 /SimpleThreadSafeRandom.Test/obj
 /SimpleThreadSafeRandom.Test/bin
 /.cr
+/SimpleRandomThreadSafe.Test/obj
+/SimpleRandomThreadSafe.Test/bin
+/SimpleRandomThreadSafe.Core/obj
+/SimpleRandomThreadSafe.Core/bin
