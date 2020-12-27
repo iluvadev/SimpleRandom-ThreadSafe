@@ -56,5 +56,6 @@ n6 = Rnd.GreaterThan(n6Min);  // n6, n6Min: long (Int64)
 ```csharp
 item1 = Rnd.From(myEnumerable);
 item2 = Rnd.From(1, 2, 3, 4, 5, 6, 7, 8);
-item3 = Rnd.From<MyEnum>();
+item3 = Rnd.From("Hello", "world");
+item4 = Rnd.From<MyEnum>();
 ```
