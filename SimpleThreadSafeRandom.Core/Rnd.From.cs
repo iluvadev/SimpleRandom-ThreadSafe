@@ -1,20 +1,25 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace SimpleThreadSafeRandom
 {
     public static partial class Rnd
     {
         public static T From<T>(IEnumerable<T> elements)
-            => Next.From(elements);
+        => elements.ElementAt(Between(0, elements.Count()));
 
         public static T From<T>(params T[] elements)
-            => Next.From(elements);
+            => elements.ElementAt(Between(0, elements.Count()));
 
         public static T From<T>() where T : struct, IConvertible
-            => Next.From<T>();
+        {
+            var enumType = typeof(T);
 
+            if (!enumType.IsEnum)
+                throw new NotSupportedException(enumType.Name + " is not an enum");
+
+            return From(Enum.GetValues(enumType).Cast<T>());
+        }
     }
 }
