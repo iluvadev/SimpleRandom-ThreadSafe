@@ -1,4 +1,4 @@
-# SimpleThreadSafeRandom
+# SimpleRandom-ThreadSafe
 Some simple functions in C# to work with Random numbers in a thread-safe way
 
 Inspired by: https://devblogs.microsoft.com/pfxteam/getting-random-numbers-in-a-thread-safe-way/
