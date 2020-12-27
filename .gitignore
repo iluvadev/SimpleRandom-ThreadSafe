@@ -1,1 +1,5 @@
 /.vs
+/SimpleThreadSafeRandom.Core/obj
+/SimpleThreadSafeRandom.Core/bin
+/SimpleThreadSafeRandom.Test/obj
+/SimpleThreadSafeRandom.Test/bin
