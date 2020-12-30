@@ -3,7 +3,6 @@ Some simple functions in C# to work with Random numbers in a thread-safe way
 
 Inspired by: https://devblogs.microsoft.com/pfxteam/getting-random-numbers-in-a-thread-safe-way/
 
-*Not tested yet*
 
 The static class Rnd manages the System.Random object for you. No initialization is needed
 
