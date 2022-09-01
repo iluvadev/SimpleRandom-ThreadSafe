@@ -1,6 +1,14 @@
-﻿// Based on:
-//https://devblogs.microsoft.com/pfxteam/getting-random-numbers-in-a-thread-safe-way/
-
+﻿// Project site: https://github.com/iluvadev/SimpleRandom-ThreadSafe
+//
+// Based on:
+// https://devblogs.microsoft.com/pfxteam/getting-random-numbers-in-a-thread-safe-way/
+//
+// Issues: https://github.com/iluvadev/SimpleRandom-ThreadSafe/issues
+// License (MIT): https://github.com/iluvadev/SimpleRandom-ThreadSafe/blob/main/LICENSE
+//
+// Copyright (c) 2021, iluvadev, and released under MIT license. This can be found in the root of this project. 
+//
+// Buy me a coffee ;) https://www.buymeacoffee.com/iluvadev
 
 using System;
 using System.Collections.Generic;
