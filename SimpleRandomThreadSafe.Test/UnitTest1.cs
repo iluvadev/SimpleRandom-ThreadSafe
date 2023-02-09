@@ -1,3 +1,4 @@
+using SimpleRandomThreadSafe;
 using System;
 using Xunit;
 
@@ -8,7 +9,6 @@ namespace SimpleThreadSafeRandom.Test
         [Fact]
         public void Test1()
         {
-            
         }
     }
 }

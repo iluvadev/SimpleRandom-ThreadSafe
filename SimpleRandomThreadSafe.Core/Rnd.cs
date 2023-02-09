@@ -14,7 +14,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace SimpleRandomThreadSafe
 {
@@ -268,7 +267,6 @@ namespace SimpleRandomThreadSafe
         /// Gets Random value of an enum
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="elements"></param>
         /// <returns></returns>
         public static T From<T>() where T : struct, IConvertible
         {
@@ -280,5 +278,126 @@ namespace SimpleRandomThreadSafe
             return From(Enum.GetValues(enumType).Cast<T>());
         }
         #endregion From
+
+        #region Sequence
+        /// <summary>
+        /// Generates a sequence of Random values of type double
+        /// </summary>
+        /// <param name="length">Lenth of the sequence (null for infinite sequence)</param>
+        /// <returns></returns>
+        public static IEnumerable<double> SequenceDouble(int? length)
+            => GenerateEnumerableWith(Double, length);
+
+        /// <summary>
+        /// Generates a sequence of Random values of type Int32
+        /// </summary>
+        /// <param name="length">Lenth of the sequence (null for infinite sequence)</param>
+        /// <returns></returns>
+        public static IEnumerable<int> SequenceInt32(int? length)
+            => GenerateEnumerableWith(Int32, length);
+
+        /// <summary>
+        /// Generates a sequence of Random values of type Byte
+        /// </summary>
+        /// <param name="length">Lenth of the sequence (null for infinite sequence)</param>
+        /// <returns></returns>
+        public static IEnumerable<byte> SequenceByte(int? length)
+            => GenerateEnumerableWith(Byte, length);
+
+        /// <summary>
+        /// Generates a sequence of Random values of type Int16
+        /// </summary>
+        /// <param name="length">Lenth of the sequence (null for infinite sequence)</param>
+        /// <returns></returns>
+        public static IEnumerable<short> SequenceInt16(int? length)
+            => GenerateEnumerableWith(Int16, length);
+
+        /// <summary>
+        /// Generates a sequence of Random values of type Int64
+        /// </summary>
+        /// <param name="length">Lenth of the sequence (null for infinite sequence)</param>
+        /// <returns></returns>
+        public static IEnumerable<long> SequenceInt64(int? length)
+            => GenerateEnumerableWith(Int64, length);
+
+        /// <summary>
+        /// Generates a sequence of Random values of type Decimal
+        /// </summary>
+        /// <param name="length">Lenth of the sequence (null for infinite sequence)</param>
+        /// <returns></returns>
+        public static IEnumerable<decimal> SequenceDecimal(int? length)
+            => GenerateEnumerableWith(Decimal, length);
+
+        /// <summary>
+        /// Generates a sequence of Random values of type Boolean
+        /// </summary>
+        /// <param name="length">Lenth of the sequence (null for infinite sequence)</param>
+        /// <returns></returns>
+        public static IEnumerable<bool> SequenceBoolean(int? length)
+            => GenerateEnumerableWith(Boolean, length);
+        #endregion Sequence
+
+        #region SequenceFrom
+        /// <summary>
+        /// Generates a sequence of Random values from elements in parameter
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="elements"></param>
+        /// <param name="length">Lenth of the sequence (null for infinite sequence)</param>
+        /// <returns></returns>
+        public static IEnumerable<T> SequenceFrom<T>(int? length, IEnumerable<T> elements)
+            => GenerateEnumerableWith(() => From(elements), length);
+
+        /// <summary>
+        /// Generates a sequence of Random values from elements in parameters
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="elements"></param>
+        /// <param name="length">Lenth of the sequence (null for infinite sequence)</param>
+        /// <returns></returns>
+        public static IEnumerable<T> SequenceFrom<T>(int? length, params T[] elements)
+            => GenerateEnumerableWith(() => From(elements), length);
+
+        /// <summary>
+        /// Generates a sequence of Random values from elements in an enum
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="length">Lenth of the sequence (null for infinite sequence)</param>
+        /// <returns></returns>
+        public static IEnumerable<T> SequenceFrom<T>(int? length) where T : struct, IConvertible
+            => GenerateEnumerableWith(From<T>, length);
+
+
+        #endregion SequenceFrom
+
+        #region Shuffle
+        /// <summary>
+        /// Creates a new sequence Shuffling the original sequence
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sequence"></param>
+        /// <returns></returns>
+        public static IEnumerable<T> Shuffle<T>(IEnumerable<T> sequence)
+        {
+            int length = sequence.Count();
+            var indexes = Enumerable.Range(0, length - 1).ToList();
+            for (int i = 0; i < length; i++)
+            {
+                var index = Between(0, indexes.Count);
+                indexes.RemoveAt(index);
+                yield return sequence.ElementAt(index);
+            }
+        }
+        #endregion Shuffle
+
+        #region Private Methods
+        private static IEnumerable<T> GenerateEnumerableWith<T>(Func<T> funcToExecute, int? length)
+        {
+            for (int i = 0; length == null || i < length; i++)
+                yield return funcToExecute();
+        }
+
+        #endregion Private Methods
+
     }
 }

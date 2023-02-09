@@ -58,3 +58,33 @@ item2 = Rnd.From(1, 2, 3, 4, 5, 6, 7, 8); // item2: a random item from params
 item3 = Rnd.From("Hello", "world");       // item3: a random item from params
 item4 = Rnd.From<MyEnum>();               // item4: a random value from "MyEnum"
 ```
+
+***Get a Sequence of Random elements***
+```csharp
+// If length is null: the Enumerable is infinite
+
+seq1 = Rnd.SequenceDouble(length);  // seq1: IEnumerable<double>
+seq2 = Rnd.SequenceDecimal(length); // seq2: IEnumerable<decimal>
+
+seq3 = Rnd.SequenceByte(length);    // seq3: IEnumerable<byte>
+seq4 = Rnd.SequenceInt16(length);   // seq4: IEnumerable<short> (Int16)
+seq5 = Rnd.SequenceInt32(length);   // seq5: IEnumerable<int> (Int32)
+seq6 = Rnd.SequenceInt64(length);   // seq6: IEnumerable<long> (Int64)
+
+seq7 = Rnd.SequenceBoolean(length); // seq7: IEnumerable<bool>
+```
+
+***Get a Sequence of Random Items from IEnumerable, params or Enum***
+```csharp
+// If length is null: the Enumerable is infinite
+
+seq1 = Rnd.SequenceFrom(length, myEnumerable);           // seq1: a sequence with random items from "myEnumerable"
+seq2 = Rnd.SequenceFrom(length, 1, 2, 3, 4, 5, 6, 7, 8); // seq2: a sequence with random items from params
+seq3 = Rnd.SequenceFrom(length, "Hello", "world");       // seq3: a sequence with random items from params
+seq4 = Rnd.SequenceFrom<MyEnum>(length);                 // seq4: a sequence with random values from "MyEnum"
+```
+
+***Get a Sequence Suffling randomly an IEnumerable***
+```csharp
+seq1 = Rnd.Shuffle(myEnumerable); // seq1: a sequence with "myEnumerable" shuffled
+```
