@@ -85,6 +85,7 @@ seq4 = Rnd.SequenceFrom<MyEnum>(length);                 // seq4: a sequence wit
 ```
 
 ***Get a Sequence Suffling randomly an IEnumerable***
+(The IEnumerable to `Shuffle` must be finite, the process calls the `Count()` method)
 ```csharp
 seq1 = Rnd.Shuffle(myEnumerable); // seq1: a sequence with "myEnumerable" shuffled
 ```
