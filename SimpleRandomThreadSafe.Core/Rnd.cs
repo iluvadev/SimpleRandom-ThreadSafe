@@ -385,7 +385,7 @@ namespace SimpleRandomThreadSafe
             {
                 var index = Between(0, indexes.Count);
                 indexes.RemoveAt(index);
-                yield return sequence.ElementAt(index);
+                yield return sequence.ElementAt(indexes[index]);
             }
         }
         #endregion Shuffle
